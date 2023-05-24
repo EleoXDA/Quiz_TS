@@ -1,9 +1,11 @@
+// Define the Question interface
 interface Question {
   question: string;
   options: string[];
   answer: string;
 }
 
+// Define the array of all questions
 const allQuestions: Question[] = [
   {
     question: "What is the capital of France?",
@@ -267,16 +269,19 @@ const allQuestions: Question[] = [
   }
 ];
 
+// Variables to keep track of the quiz state
 let currentQuestion: number = 0;
 let score: number = 0;
 let answerSelected: boolean = false;
 
+// Get references to DOM elements
 let questionElement: HTMLElement | null = document.getElementById("question");
 let optionsElements: HTMLCollectionOf<Element> = document.getElementsByClassName("option");
 let scoreElement: HTMLElement | null = document.getElementById("score");
 let nextButton: HTMLElement | null = document.getElementById("next-button");
 let restartButton: HTMLElement | null = document.getElementById("restart-button");
 
+// Function to randomly select 5 questions from the allQuestions array
 function getRandomQuestions(): Question[] {
   let questionsCopy = [...allQuestions];
   let randomQuestions: Question[] = [];
@@ -288,8 +293,10 @@ function getRandomQuestions(): Question[] {
   return randomQuestions;
 }
 
+// Get random questions and initialize the quiz
 let questions: Question[] = getRandomQuestions();
 
+// Function to display the current question and options
 function showQuestion(): void {
   let question = questions[currentQuestion];
   if (questionElement)
@@ -303,6 +310,7 @@ function showQuestion(): void {
   answerSelected = false;
 }
 
+// Function to check if the selected answer is correct
 function checkAnswer(selectedOption: HTMLElement): void {
   if (!answerSelected) {
     selectedOption.classList.add("selected");
@@ -316,6 +324,7 @@ function checkAnswer(selectedOption: HTMLElement): void {
   }
 }
 
+// Function to display the next question or end the quiz if all questions are answered
 function showNextQuestion(): void {
   currentQuestion++;
   if (currentQuestion < questions.length) {
@@ -325,6 +334,7 @@ function showNextQuestion(): void {
   }
 }
 
+// Function to end the quiz, hide the questions and next button, and display the restart button
 function endQuiz(): void {
   if (questionElement)
     questionElement.textContent = "Quiz complete!";
@@ -338,6 +348,7 @@ function endQuiz(): void {
     restartButton.style.display = "block";
 }
 
+// Function to restart the quiz
 function restartQuiz(): void {
   score = 0;
   if (scoreElement)
@@ -351,8 +362,10 @@ function restartQuiz(): void {
   showQuestion();
 }
 
+// Start the quiz
 restartQuiz();
 
+// Add click event listeners to the options
 for (let i = 0; i < optionsElements.length; i++) {
   let optionsElement = optionsElements[i] as HTMLElement;
   optionsElement.addEventListener("click", function() {
@@ -360,9 +373,11 @@ for (let i = 0; i < optionsElements.length; i++) {
   });
 }
 
+// Add click event listeners to the next and restart buttons
 nextButton!.addEventListener("click", showNextQuestion);
 restartButton!.addEventListener("click", restartQuiz);
 
+// Add a change event listener to the theme selector to handle theme changes
 document.addEventListener('DOMContentLoaded', function() {
   let themeSelector: HTMLSelectElement | null = document.getElementById('theme-selector') as HTMLSelectElement;
 
@@ -370,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let buttons = document.getElementsByTagName('button');
     let quizContainers = document.getElementsByClassName('quiz-container');
 
-    // Remove the existing theme class from the body
+    // Remove the existing theme class from the body, quiz containers, and buttons
     document.body.classList.remove('theme-default', 'theme-dark');
     for (let i = 0; i < quizContainers.length; i++) {
       (quizContainers[i] as HTMLElement).classList.remove('theme-default', 'theme-dark');
@@ -379,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
       buttons[i].classList.remove('theme-default', 'theme-dark');
     }
 
-    // Add the selected theme class to the body, quizContainers, and buttons
+    // Add the selected theme class to the body, quiz containers, and buttons
     document.body.classList.add(this.value);
     for (let i = 0; i < quizContainers.length; i++) {
       (quizContainers[i] as HTMLElement).classList.add(this.value);
