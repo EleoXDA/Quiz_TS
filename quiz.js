@@ -351,7 +351,6 @@ document.addEventListener('DOMContentLoaded', function () {
     themeSelector === null || themeSelector === void 0 ? void 0 : themeSelector.addEventListener('change', function () {
         let buttons = document.getElementsByTagName('button');
         let quizContainers = document.getElementsByClassName('quiz-container');
-        // Remove the existing theme class from the body
         document.body.classList.remove('theme-default', 'theme-dark');
         for (let i = 0; i < quizContainers.length; i++) {
             quizContainers[i].classList.remove('theme-default', 'theme-dark');
@@ -359,7 +358,6 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].classList.remove('theme-default', 'theme-dark');
         }
-        // Add the selected theme class to the body, quizContainers, and buttons
         document.body.classList.add(this.value);
         for (let i = 0; i < quizContainers.length; i++) {
             quizContainers[i].classList.add(this.value);
@@ -367,10 +365,8 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].classList.add(this.value);
         }
-        // Save the selected theme in local storage
         localStorage.setItem('selectedTheme', this.value);
     });
-    // Load the saved theme from local storage (if any)
     let savedTheme = localStorage.getItem('selectedTheme');
     if (savedTheme) {
         themeSelector.value = savedTheme;
