@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>  
+  <body>
+    <div class="quiz-container">
+      <h1>Fun Quiz App</h1>
+      <div class="question-container">
+        <h2 id="question"></h2>
+        <div class="options-container">
+          <button class="option"></button>
+          <button class="option"></button>
+          <button class="option"></button>
+          <button class="option"></button>
+        </div>
+      </div>
+      <div class="score-container">
+        <h3>Your Score: <span id="score">0</span></h3>
+      </div>
+      <button id="next-button">Next Question</button>
+      <button id="restart-button" style="display: none;">Restart Quiz</button>
+    </div>
+    <div class="theme-selector-container center">
+        <label for="theme-selector">Choose a theme:</label>
+        <select id="theme-selector">
+          <option value="theme-default">Light</option>
+          <option value="theme-dark">Dark</option>
+        </select>
+      </div>
+    <script src="quiz.js"></script>
+  </body>
+</html>

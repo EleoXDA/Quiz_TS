@@ -1,0 +1,215 @@
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .quiz-container {
+    max-width: 90%;
+    padding: 10px;
+  }
+  
+  .options-container {
+    display: block;
+  }
+  
+  .option {
+    margin: 5px 0; /* stacked options vertically */
+    padding: 10px;
+  }
+  
+  #next-button, #restart-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  h1, h2, h3 {
+    font-size: 1.2em;
+  }
+  
+  .score-container {
+    font-size: 1em;
+  }
+}
+
+.quiz-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 2px #aaa;
+}
+
+.question-container {
+  margin: 20px 0;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.option {
+  margin: 5px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option.selected {
+  background-color: #007bff;
+  color: #000;
+}
+
+.score-container {
+  margin: 20px 0;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+#next-button {
+  margin: 20px 0;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#restart-button {
+  margin: 20px 0;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+
+.theme-selector-container {
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 10;
+}
+
+.theme-selector-container select {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.theme-default, .theme-default .quiz-container, .theme-default .question-container, .theme-default .options-container, .theme-default .option.selected, .theme-default .theme-selector-container {
+  background-color: #fff;
+}
+
+.theme-default #next-button {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: lightblue;
+  color: #000;
+}
+
+.theme-default #question, .theme-default h3 {
+  color: #000;
+}
+
+.theme-default #next-button:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: rgb(179, 228, 245);
+  color: #000;
+}
+
+.theme-default .option.selected {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: lightblue;
+  color: #000;
+}
+
+.theme-default #restart-button {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: #77d48b;
+  color: #000;
+}
+.theme-default #restart-button:hover {
+  background-color: #b1ddbb;
+}
+
+.theme-default .option:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: rgb(201, 234, 245);
+  color: #000;
+}
+
+.theme-default .theme-selector-container, .theme-default .theme-selector-container select {
+  background-color: #fff; 
+  color: #010101;
+}
+
+.theme-dark, .theme-dark .quiz-container, .theme-dark .question-container, .theme-dark .options-container, .theme-dark .option.selected, .theme-dark .theme-selector-container {
+  background-color: #000;
+}
+
+.theme-dark .option.selected {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: rgb(0, 48, 94);
+  color: #fff;
+}
+
+.theme-dark .option:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: rgb(0, 87, 116);
+  color: #fff;
+}
+
+.theme-dark .option { 
+border: 1px solid #333;
+border-radius: 5px;
+background-color: #111;
+color: #fff
+}
+
+.theme-dark h1, h2, h3 {
+  color: #fff;
+}
+
+.theme-dark #next-button {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: rgb(0, 55, 75);
+  color: #fff;
+}
+
+.theme-dark #next-button:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: rgb(0, 30, 50);
+  color: #fff;
+}
+
+.theme-dark #restart-button {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: #77d48b;
+  color: #000;
+}
+.theme-dark #restart-button:hover {
+  background-color: #b1ddbb;
+}
+
+.theme-dark .quiz-container {
+  box-shadow: 0px 0px 10px 2px #333;
+}
+
+.theme-dark .theme-selector-container, .theme-dark .theme-selector-container select {
+  background-color: #000; 
+  color: #fff;
+}
