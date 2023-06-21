@@ -1,4 +1,4 @@
-# Fun Quiz App
+# Simple Quiz
 
 ![image](https://github.com/EleoXDA/Quiz_JS/assets/27622683/7a1058b1-ccc6-4098-b8bf-0bca9903bab8)
 
