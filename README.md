@@ -26,4 +26,4 @@ Feel free to add, remove, or modify the questions as you see fit.
 This app should work in any modern web browser that supports HTML5, CSS3, and ES6 JavaScript.
 
 ## License
-This project does not contain a license
+This project is licensed under the MIT License. You can find the full text of the license in the [LICENSE.md](LICENSE.md) file.
